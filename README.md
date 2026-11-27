@@ -8,6 +8,7 @@ In the broader X500 project, the companion owns onboard planning and PX4 owns fl
 |---|---|
 | [Drone energy planner](drone-energy-planner/) | Dependency-free Rust library that computes mission demand and signed reserve margin. The profile API reports the matched evidence per segment. |
 | [Flight Energy MCP](flight-energy-mcp/README.md) | Read-only stdio server and Mojo client. The client estimates a synthetic six-phase mission and saves the exact request and result. The demo uses the shared planner crate in this repository. |
+| [Energy Web Tools](energy_web_tools/README.md) | Dioxus application for distributed energy simulations. Its test is referenced on the [Tesero Sol renewable energy consulting page](https://tesorosol.com/renewable-energy-consulting). |
 | [Mojo LLM](mojo-llm/README.md) | Native Mojo build and smoke test. The CPU-first inference experiment uses llama.cpp/ggml as a design reference. GGUF loading, quantized kernels, and token generation are future work. |
 
 ## Reproduce

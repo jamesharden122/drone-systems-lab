@@ -9,6 +9,8 @@ Energy Web Tools is a Dioxus (Rust) full‑stack app for simulating and visualiz
 - In‑memory SurrealDB for quick, ephemeral persistence during simulations.
 
 
+The Energy Web Tools test is referenced on the [Tesero Sol renewable energy consulting page](https://tesorosol.com/renewable-energy-consulting).
+
 ## Quick Start
 
 1) Install prerequisites
