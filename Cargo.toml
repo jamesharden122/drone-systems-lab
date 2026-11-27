@@ -1,0 +1,3 @@
+[workspace]
+members = ["drone-energy-planner", "flight-energy-mcp/energy-mcp"]
+resolver = "3"

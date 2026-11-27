@@ -107,7 +107,7 @@ def save_context(request, result):
         "The input is [fixtures/six-phase.json](fixtures/six-phase.json).",
         "## Known limitations",
         "The six phases use synthetic measurements and caller-supplied durations. "
-        "The independent [Matrice 100 benchmark](planner/benchmark/README.md) covers one recorded configuration. "
+        "The independent [Matrice 100 benchmark](../drone-energy-planner/benchmark/README.md) covers one recorded configuration. "
         "The result measures energy reserve. The harness runs no native model inference.",
     ]
     destination = ROOT / "CONTEXT.md"

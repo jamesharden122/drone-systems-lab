@@ -86,7 +86,7 @@
     "profiles": [
       {
         "id": "takeoff",
-        "source": "planner/examples/six_phase.rs (synthetic)",
+        "source": "drone-energy-planner/examples/six_phase.rs (synthetic)",
         "phase": "takeoff",
         "configuration": "synthetic-quad-A",
         "workload": "camera logging",
@@ -105,7 +105,7 @@
       },
       {
         "id": "climb",
-        "source": "planner/examples/six_phase.rs (synthetic)",
+        "source": "drone-energy-planner/examples/six_phase.rs (synthetic)",
         "phase": "climb",
         "configuration": "synthetic-quad-A",
         "workload": "camera logging",
@@ -124,7 +124,7 @@
       },
       {
         "id": "hover",
-        "source": "planner/examples/six_phase.rs (synthetic)",
+        "source": "drone-energy-planner/examples/six_phase.rs (synthetic)",
         "phase": "hover",
         "configuration": "synthetic-quad-A",
         "workload": "camera logging",
@@ -155,7 +155,7 @@
       },
       {
         "id": "cruise",
-        "source": "planner/examples/six_phase.rs (synthetic)",
+        "source": "drone-energy-planner/examples/six_phase.rs (synthetic)",
         "phase": "cruise",
         "configuration": "synthetic-quad-A",
         "workload": "camera logging",
@@ -174,7 +174,7 @@
       },
       {
         "id": "descent",
-        "source": "planner/examples/six_phase.rs (synthetic)",
+        "source": "drone-energy-planner/examples/six_phase.rs (synthetic)",
         "phase": "descent",
         "configuration": "synthetic-quad-A",
         "workload": "camera logging",
@@ -193,7 +193,7 @@
       },
       {
         "id": "landing",
-        "source": "planner/examples/six_phase.rs (synthetic)",
+        "source": "drone-energy-planner/examples/six_phase.rs (synthetic)",
         "phase": "landing",
         "configuration": "synthetic-quad-A",
         "workload": "camera logging",

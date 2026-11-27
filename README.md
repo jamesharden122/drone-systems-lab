@@ -1,20 +1,19 @@
-# Drone energy planning and native Mojo experiments
+# Drone Systems Lab
 
 This repository brings together a battery-budget library, a runnable MCP demo, and an early experiment in native Mojo inference. The energy workflow estimates how many watt-hours a candidate drone mission needs and shows which power profiles support the result.
 
 | Project | What runs today |
 |---|---|
 | [Drone energy planner](drone-energy-planner/) | Dependency-free Rust library that computes mission demand and signed reserve margin. The profile API reports the matched evidence per segment. |
-| [Flight Energy MCP](flight-energy-mcp/README.md) | Read-only stdio server and Mojo client. The client estimates a synthetic six-phase mission and saves the exact request and result. The demo bundles its own copy of the planner. |
+| [Flight Energy MCP](flight-energy-mcp/README.md) | Read-only stdio server and Mojo client. The client estimates a synthetic six-phase mission and saves the exact request and result. The demo uses the shared planner crate in this repository. |
 | [Mojo LLM](mojo-llm/README.md) | Native Mojo build and smoke test. The CPU-first inference experiment uses llama.cpp/ggml as a design reference. GGUF loading, quantized kernels, and token generation are future work. |
 
 ## Reproduce
 
-Run each command from this repository's root. The two Pixi projects preserve their individual locks. The MCP demo needs Pixi, Cargo, a C linker, and a host CPython with a shared library. See the demo README for the tested environment.
+Run each command from the repository root. Fetch the locked Rust packages with `cargo fetch --locked` if your cache is empty. The two Pixi projects preserve their individual locks. The MCP demo needs Pixi, Cargo, a C linker, and a host CPython with a shared library. See the demo README for the tested environment.
 
 ```sh
-(cd drone-energy-planner && cargo test --locked --offline)
-(cd flight-energy-mcp && cargo test --workspace --locked)
+cargo test --workspace --locked --offline
 (cd flight-energy-mcp && pixi run --locked demo)
 (cd flight-energy-mcp && pixi run --locked test-demo)
 (cd mojo-llm && pixi run --locked smoke)

@@ -5,7 +5,7 @@ edition = "2024"
 publish = false
 
 [dependencies]
-drone-energy-planner = { path = "../planner" }
+drone-energy-planner = { path = "../../drone-energy-planner" }
 mcport = { version = "=0.6.1", default-features = false }
 schemars = "1"
 serde = { version = "1", features = ["derive"] }

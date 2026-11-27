@@ -23,7 +23,7 @@ Open [CONTEXT.md](CONTEXT.md) for the exact tool request, structured response, s
 
 ## Two sources of evidence
 
-**Six-phase demo.** The [fixture](fixtures/six-phase.json) supplies a 65 Wh usable battery budget and a 15 Wh reserve. Takeoff, climb, hover, cruise, descent and landing use 1.5, 5, 22, 14, 3 and 0.5 Wh respectively. These are synthetic calibration inputs. For the six-minute hover, propulsion draws 200 W, the compute branch draws 9 W downstream of a 90%-efficient converter, and auxiliaries draw 10 W at the pack. The resulting 220 W gives 22 Wh. The [Rust example](planner/examples/six_phase.rs) obtains the same result from a whole-pack measurement and demonstrates a change of operating conditions.
+**Six-phase demo.** The [fixture](fixtures/six-phase.json) supplies a 65 Wh usable battery budget and a 15 Wh reserve. Takeoff, climb, hover, cruise, descent and landing use 1.5, 5, 22, 14, 3 and 0.5 Wh respectively. These are synthetic calibration inputs. For the six-minute hover, propulsion draws 200 W, the compute branch draws 9 W downstream of a 90%-efficient converter, and auxiliaries draw 10 W at the pack. The resulting 220 W gives 22 Wh. The [Rust example](../drone-energy-planner/examples/six_phase.rs) obtains the same result from a whole-pack measurement and demonstrates a change of operating conditions.
 
 **Measured Matrice 100 benchmark.** Three comparable flights (167, 178, 253) set the mean pack watts for takeoff, cruise and landing. Two entire flights from a later day were held out. The reference integrates paired voltage and current over recorded flight intervals. Supplying the actual phase durations isolates error in the power estimate.
 
@@ -32,13 +32,13 @@ Open [CONTEXT.md](CONTEXT.md) for the exact tool request, structured response, s
 | 276 | 14.84246 | 15.62532 | +0.78286 |
 | 277 | 15.13007 | 15.72783 | +0.59776 |
 
-These two results describe the recorded M100 configuration and route. Applying the model to an X500 requires its own calibration. The [benchmark notes](planner/benchmark/README.md) record phase boundaries, assumptions, source attribution under CC BY 4.0, and how to regenerate the 15-row fixture from the checksum-verified CMU archive. [Original dataset](https://doi.org/10.1184/R1/12683453.v1)
+These two results describe the recorded M100 configuration and route. Applying the model to an X500 requires its own calibration. The [benchmark notes](../drone-energy-planner/benchmark/README.md) record phase boundaries, assumptions, source attribution under CC BY 4.0, and how to regenerate the 15-row fixture from the checksum-verified CMU archive. [Original dataset](https://doi.org/10.1184/R1/12683453.v1)
 
 ## How it works
 
 1. The [Mojo driver](mojo/main.mojo) negotiates MCP version `2025-11-25`, sends `notifications/initialized`, discovers the tool with `tools/list`, and issues `tools/call`. It checks totals and per-phase evidence. A [Python standard-library bridge](mojo/bridge.py) handles subprocess pipes, newline-delimited JSON-RPC and file I/O. Native model inference is future work. [MCP lifecycle](https://modelcontextprotocol.io/specification/2025-11-25/basic/lifecycle) · [Mojo Python interop](https://mojolang.org/docs/manual/python/python-from-mojo/)
 2. The [Rust server](energy-mcp/src/main.rs) registers one tool, `estimate_profiled_mission`, using **mcport 0.6.1**. Serde, serde_json and Schemars handle the JSON boundary and published schemas. Tool arguments carry `remaining_usable_wh`, `reserve_wh`, `segments` and `profiles`. Success returns `structuredContent.totals` and ordered `structuredContent.segments`. Malformed arguments and planning failures produce MCP tool errors.
-3. The [numerical library](planner/src/profile.rs) has **zero external crates**. A segment must match one profile by phase, configuration, workload, precipitation and the same set of numeric factors inside inclusive ranges. Missing coverage and overlapping matches produce indexed errors. Each profile supplies total pack watts or disjoint electrical loads allocated to the planned pack. The library integrates watts over seconds and retains signed energy shortfalls. The [calibration guide](planner/docs/flight-energy.md) covers weather, CG, rotor behavior, compute workloads, and battery temperature.
+3. The [numerical library](../drone-energy-planner/src/profile.rs) has **zero external crates**. A segment must match one profile by phase, configuration, workload, precipitation and the same set of numeric factors inside inclusive ranges. Missing coverage and overlapping matches produce indexed errors. Each profile supplies total pack watts or disjoint electrical loads allocated to the planned pack. The library integrates watts over seconds and retains signed energy shortfalls. The [calibration guide](../drone-energy-planner/docs/flight-energy.md) covers weather, CG, rotor behavior, compute workloads, and battery temperature.
 
 ## Reproduce the checks
 

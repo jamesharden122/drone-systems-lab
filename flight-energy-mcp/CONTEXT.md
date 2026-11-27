@@ -97,7 +97,7 @@ Required 46 Wh | projected remaining 19 Wh | reserve margin +4 Wh
       "profiles": [
         {
           "id": "takeoff",
-          "source": "planner/examples/six_phase.rs (synthetic)",
+          "source": "drone-energy-planner/examples/six_phase.rs (synthetic)",
           "phase": "takeoff",
           "configuration": "synthetic-quad-A",
           "workload": "camera logging",
@@ -116,7 +116,7 @@ Required 46 Wh | projected remaining 19 Wh | reserve margin +4 Wh
         },
         {
           "id": "climb",
-          "source": "planner/examples/six_phase.rs (synthetic)",
+          "source": "drone-energy-planner/examples/six_phase.rs (synthetic)",
           "phase": "climb",
           "configuration": "synthetic-quad-A",
           "workload": "camera logging",
@@ -135,7 +135,7 @@ Required 46 Wh | projected remaining 19 Wh | reserve margin +4 Wh
         },
         {
           "id": "hover",
-          "source": "planner/examples/six_phase.rs (synthetic)",
+          "source": "drone-energy-planner/examples/six_phase.rs (synthetic)",
           "phase": "hover",
           "configuration": "synthetic-quad-A",
           "workload": "camera logging",
@@ -166,7 +166,7 @@ Required 46 Wh | projected remaining 19 Wh | reserve margin +4 Wh
         },
         {
           "id": "cruise",
-          "source": "planner/examples/six_phase.rs (synthetic)",
+          "source": "drone-energy-planner/examples/six_phase.rs (synthetic)",
           "phase": "cruise",
           "configuration": "synthetic-quad-A",
           "workload": "camera logging",
@@ -185,7 +185,7 @@ Required 46 Wh | projected remaining 19 Wh | reserve margin +4 Wh
         },
         {
           "id": "descent",
-          "source": "planner/examples/six_phase.rs (synthetic)",
+          "source": "drone-energy-planner/examples/six_phase.rs (synthetic)",
           "phase": "descent",
           "configuration": "synthetic-quad-A",
           "workload": "camera logging",
@@ -204,7 +204,7 @@ Required 46 Wh | projected remaining 19 Wh | reserve margin +4 Wh
         },
         {
           "id": "landing",
-          "source": "planner/examples/six_phase.rs (synthetic)",
+          "source": "drone-energy-planner/examples/six_phase.rs (synthetic)",
           "phase": "landing",
           "configuration": "synthetic-quad-A",
           "workload": "camera logging",
@@ -242,7 +242,7 @@ Required 46 Wh | projected remaining 19 Wh | reserve margin +4 Wh
       "phase": "takeoff",
       "duration_s": 12.0,
       "profile_id": "takeoff",
-      "source": "planner/examples/six_phase.rs (synthetic)",
+      "source": "drone-energy-planner/examples/six_phase.rs (synthetic)",
       "pack_power_w": 450.0,
       "required_wh": 1.5
     },
@@ -250,7 +250,7 @@ Required 46 Wh | projected remaining 19 Wh | reserve margin +4 Wh
       "phase": "climb",
       "duration_s": 48.0,
       "profile_id": "climb",
-      "source": "planner/examples/six_phase.rs (synthetic)",
+      "source": "drone-energy-planner/examples/six_phase.rs (synthetic)",
       "pack_power_w": 375.0,
       "required_wh": 5.0
     },
@@ -258,7 +258,7 @@ Required 46 Wh | projected remaining 19 Wh | reserve margin +4 Wh
       "phase": "hover",
       "duration_s": 360.0,
       "profile_id": "hover",
-      "source": "planner/examples/six_phase.rs (synthetic)",
+      "source": "drone-energy-planner/examples/six_phase.rs (synthetic)",
       "pack_power_w": 220.0,
       "required_wh": 22.0
     },
@@ -266,7 +266,7 @@ Required 46 Wh | projected remaining 19 Wh | reserve margin +4 Wh
       "phase": "cruise",
       "duration_s": 180.0,
       "profile_id": "cruise",
-      "source": "planner/examples/six_phase.rs (synthetic)",
+      "source": "drone-energy-planner/examples/six_phase.rs (synthetic)",
       "pack_power_w": 280.0,
       "required_wh": 14.0
     },
@@ -274,7 +274,7 @@ Required 46 Wh | projected remaining 19 Wh | reserve margin +4 Wh
       "phase": "descent",
       "duration_s": 48.0,
       "profile_id": "descent",
-      "source": "planner/examples/six_phase.rs (synthetic)",
+      "source": "drone-energy-planner/examples/six_phase.rs (synthetic)",
       "pack_power_w": 225.0,
       "required_wh": 3.0
     },
@@ -282,7 +282,7 @@ Required 46 Wh | projected remaining 19 Wh | reserve margin +4 Wh
       "phase": "landing",
       "duration_s": 12.0,
       "profile_id": "landing",
-      "source": "planner/examples/six_phase.rs (synthetic)",
+      "source": "drone-energy-planner/examples/six_phase.rs (synthetic)",
       "pack_power_w": 150.0,
       "required_wh": 0.5
     }
@@ -292,12 +292,12 @@ Required 46 Wh | projected remaining 19 Wh | reserve margin +4 Wh
 
 ## Selected profile sources
 
-- takeoff — planner/examples/six_phase.rs (synthetic)
-- climb — planner/examples/six_phase.rs (synthetic)
-- hover — planner/examples/six_phase.rs (synthetic)
-- cruise — planner/examples/six_phase.rs (synthetic)
-- descent — planner/examples/six_phase.rs (synthetic)
-- landing — planner/examples/six_phase.rs (synthetic)
+- takeoff — drone-energy-planner/examples/six_phase.rs (synthetic)
+- climb — drone-energy-planner/examples/six_phase.rs (synthetic)
+- hover — drone-energy-planner/examples/six_phase.rs (synthetic)
+- cruise — drone-energy-planner/examples/six_phase.rs (synthetic)
+- descent — drone-energy-planner/examples/six_phase.rs (synthetic)
+- landing — drone-energy-planner/examples/six_phase.rs (synthetic)
 
 ## Reproduce
 
@@ -305,4 +305,4 @@ From the repository root run `pixi run --locked demo`. The input is [fixtures/si
 
 ## Known limitations
 
-The six phases use synthetic measurements and caller-supplied durations. The independent [Matrice 100 benchmark](planner/benchmark/README.md) covers one recorded configuration. The result measures energy reserve. The harness runs no native model inference.
+The six phases use synthetic measurements and caller-supplied durations. The independent [Matrice 100 benchmark](../drone-energy-planner/benchmark/README.md) covers one recorded configuration. The result measures energy reserve. The harness runs no native model inference.
