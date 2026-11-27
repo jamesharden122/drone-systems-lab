@@ -1,0 +1,63 @@
+.table-container {
+    max-height: 90vh; /* adjust to your preferred height */
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+
+
+.data-ai-table th,
+.data-ai-table td {
+    text-align: center;
+}
+
+.data-ai-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.95rem;
+    background-color: #1e1e2f;
+    color: #f1f1f1;
+    border: 1px solid #2c2c3c;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+}
+
+.data-ai-header-row {
+    background-color: #2b2b3d;
+}
+
+.data-ai-header {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #61dafb;
+    border-bottom: 1px solid #444;
+}
+
+.data-ai-row:nth-child(even) {
+    background-color: #252537;
+}
+
+.data-ai-row:hover {
+    background-color: #313145;
+    cursor: pointer;
+}
+
+.data-ai-key {
+    padding: 0.75rem 1rem;
+    font-weight: 500;
+    color: #ffa94d;
+    width: 30%;
+    border-bottom: 1px solid #333;
+}
+
+.data-ai-value {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #333;
+}
+
+

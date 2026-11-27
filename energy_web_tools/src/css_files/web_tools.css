@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&display=swap');
+
+/* FUTURISTIC WEB TOOLS STYLING */
+/* ===== Reset & Base ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: radial-gradient(ellipse at center, #0e1013 0%, #06070a 100%);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.web-tools-root {
+    color: #e0e6ed;
+    font-family: 'Orbitron', 'Segoe UI', sans-serif;
+    max-width: 70%;
+    min-height: 90vh;
+    margin: auto;
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.web-tools-hero {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.web-tools-hero h1 {
+    color: #e0e6ed;
+    font-family: 'Orbitron', 'Segoe UI', sans-serif;
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #30d5c8;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 15px #30d5c888;
+}
+
+.web-tools-hero p {
+    color: #e0e6ed;
+    font-family: 'Orbitron', 'Segoe UI', sans-serif;
+    font-size: 1.1rem;
+    color: #a3b1c6;
+    max-width: 700px;
+    margin: auto;
+}
+
+.web-tools-selector {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 2.5rem;
+}
+
+.selector-button {
+    padding: 0.9rem 1.8rem;
+    font-size: 1rem;
+    background: linear-gradient(145deg, #101216, #181c22);
+    border: 1px solid #2c303a;
+    border-radius: 12px;
+    color: #30d5c8;
+    font-family: 'Orbitron', 'Segoe UI', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 8px #30d5c822, inset 0 0 0 transparent;
+    backdrop-filter: blur(4px);
+}
+
+.selector-button:hover {
+    background: #1c222b;
+    box-shadow: 0 0 15px #30d5c888, inset 0 0 5px #30d5c822;
+    color: #ffffff;
+    border-color: #30d5c8;
+    font-family: 'Orbitron', 'Segoe UI', sans-serif;
+}
+
+.web-tools-panel {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 18px;
+    padding: 2rem;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+}
+
+.tool-placeholder, .forecast-placeholder {
+    text-align: center;
+    color: #a0acbf;
+    font-style: italic;
+    padding: 2rem;
+    font-size: 1.2rem;
+    font-family: 'Orbitron', 'Segoe UI', sans-serif;
+}
+
+input {
+    width: 100%;
+    margin-bottom: 0.5rem;
+    padding: 0.3rem;
+    background: #333;
+    color: #fff;
+    border: 1px solid #555;
+    border-radius: 4px;
+}
+label {
+    display: block;
+    margin-top: 0.5rem;
+}
+.form-section {
+    flex: 1;
+    background: #2a2a2a;
+    padding: 1rem;
+    border-radius: 8px;
+}
+.summary-section {
+    margin: 2rem;
+    background: #222;
+    padding: 1rem;
+    border-radius: 6px;
+}
+

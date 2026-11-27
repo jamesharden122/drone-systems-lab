@@ -1,0 +1,50 @@
+# === Rust build artifacts ===
+/target/
+/debug/
+/release/
+
+# Keep Cargo.lock for binaries/apps (do not ignore)
+# !Cargo.lock
+
+# === Dioxus / Trunk / Web builds ===
+/dist/
+/build/
+/.dioxus/
+
+# === OS & Editor cruft ===
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+
+# === Environment files ===
+.env
+.env.*
+!.env.example
+
+# === Logs & temp files ===
+logs/
+log/
+*.log
+tmp/
+*.tmp
+
+# === Coverage & profiling ===
+coverage/
+*.profraw
+*.profdata
+*.gcda
+*.gcno
+
+# === Caches ===
+.cache/
+
+# === Data directories (avoid pushing large datasets) ===
+data/
+datasets/
+cache/
+
+# If you later move large CSVs into data/ or datasets/, they will be ignored.

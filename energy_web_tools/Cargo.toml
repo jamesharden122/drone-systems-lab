@@ -1,0 +1,63 @@
+[package]
+name = "energy_web_tools"
+version = "0.1.0"
+authors = ["jamesharden122 <loudonvillewf@gmail.com>"]
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+dioxus = { version = "0.6.3", features = ["fullstack", "router","asset"]  }
+dioxus-router = "0.6.3"
+dioxus-logger = "0.6.2"
+dioxus-cli-config = { version = "0.6.3", optional = true }
+serde = { version = "1.0.197", features = ["derive"] }
+dioxus-free-icons = { version = "0.9.0", features = ["font-awesome-solid"] }
+tracing = "0.1.40"
+surrealdb = { version = "2.3.3", features = ["protocol-ws", "kv-mem"], optional = true  }
+serde_json = "1.0.117"
+tokio = { version = "1.37", features = ["rt-multi-thread", "macros"], optional = true }
+axum = { version = "0.7.0", optional = true }
+log = "0.4.21"
+chrono = { version = "0.4.41", features = ["serde"] }
+thiserror = "2.0.12"
+nalgebra = {version = "0.32.4"}
+rand_distr = {version = "0.4.3", optional = true}
+uuid = { version = "1.9.1", features = ["v4", "fast-rng"], optional = true }
+polars = { version ="0.46.0", features = ["lazy"], optional = true}
+anyhow = "1.0.89" 
+rand = {version = "0.8.5", optional = true}
+sun = "0.3.1"
+env = "1.0.1"
+good_lp = "1.14.0"
+either = "1.15.0"
+
+[features]
+default = ["web"]
+web = ["dioxus/web"]
+desktop = ["dioxus/desktop"]
+mobile = ["dioxus/mobile"]
+server = [
+    "dioxus/server",
+    "dep:surrealdb",
+    "dep:axum",
+    "dep:tokio",
+    "dep:dioxus-cli-config",
+    "dep:rand_distr",
+    "dep:rand",
+    "dep:uuid",
+    "dep:polars",
+]
+[profile]
+
+[profile.wasm-dev]
+inherits = "dev"
+opt-level = 1
+
+[profile.server-dev]
+inherits = "dev"
+
+[profile.android-dev]
+inherits = "dev"
+
+[workspace]
