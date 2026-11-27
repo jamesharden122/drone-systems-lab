@@ -1,0 +1,3 @@
+[workspace]
+members = ["planner", "energy-mcp"]
+resolver = "3"

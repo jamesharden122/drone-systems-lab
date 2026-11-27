@@ -1,0 +1,11 @@
+[package]
+name = "drone-energy-planner"
+version = "0.1.0"
+edition = "2024"
+description = "Mission energy estimates from pack-terminal discharge power and segment duration"
+
+[workspace]
+
+[[example]]
+name = "six_phase"
+test = true

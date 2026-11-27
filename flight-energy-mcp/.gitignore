@@ -1,0 +1,4 @@
+/target/
+/build/
+/.pixi/
+__pycache__/

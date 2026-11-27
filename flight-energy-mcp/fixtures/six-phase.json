@@ -1,0 +1,215 @@
+{
+  "name": "estimate_profiled_mission",
+  "arguments": {
+    "remaining_usable_wh": 65,
+    "reserve_wh": 15,
+    "segments": [
+      {
+        "phase": "takeoff",
+        "configuration": "synthetic-quad-A",
+        "workload": "camera logging",
+        "precipitation": "dry",
+        "duration_s": 12,
+        "conditions": [
+          {
+            "factor": "air_density_kg_m3",
+            "value": 1.2
+          }
+        ]
+      },
+      {
+        "phase": "climb",
+        "configuration": "synthetic-quad-A",
+        "workload": "camera logging",
+        "precipitation": "dry",
+        "duration_s": 48,
+        "conditions": [
+          {
+            "factor": "air_density_kg_m3",
+            "value": 1.2
+          }
+        ]
+      },
+      {
+        "phase": "hover",
+        "configuration": "synthetic-quad-A",
+        "workload": "camera logging",
+        "precipitation": "dry",
+        "duration_s": 360,
+        "conditions": [
+          {
+            "factor": "air_density_kg_m3",
+            "value": 1.2
+          }
+        ]
+      },
+      {
+        "phase": "cruise",
+        "configuration": "synthetic-quad-A",
+        "workload": "camera logging",
+        "precipitation": "dry",
+        "duration_s": 180,
+        "conditions": [
+          {
+            "factor": "air_density_kg_m3",
+            "value": 1.2
+          }
+        ]
+      },
+      {
+        "phase": "descent",
+        "configuration": "synthetic-quad-A",
+        "workload": "camera logging",
+        "precipitation": "dry",
+        "duration_s": 48,
+        "conditions": [
+          {
+            "factor": "air_density_kg_m3",
+            "value": 1.2
+          }
+        ]
+      },
+      {
+        "phase": "landing",
+        "configuration": "synthetic-quad-A",
+        "workload": "camera logging",
+        "precipitation": "dry",
+        "duration_s": 12,
+        "conditions": [
+          {
+            "factor": "air_density_kg_m3",
+            "value": 1.2
+          }
+        ]
+      }
+    ],
+    "profiles": [
+      {
+        "id": "takeoff",
+        "source": "planner/examples/six_phase.rs (synthetic)",
+        "phase": "takeoff",
+        "configuration": "synthetic-quad-A",
+        "workload": "camera logging",
+        "precipitation": "dry",
+        "ranges": [
+          {
+            "factor": "air_density_kg_m3",
+            "min": 1.18,
+            "max": 1.22
+          }
+        ],
+        "power": {
+          "kind": "whole_pack",
+          "watts": 450
+        }
+      },
+      {
+        "id": "climb",
+        "source": "planner/examples/six_phase.rs (synthetic)",
+        "phase": "climb",
+        "configuration": "synthetic-quad-A",
+        "workload": "camera logging",
+        "precipitation": "dry",
+        "ranges": [
+          {
+            "factor": "air_density_kg_m3",
+            "min": 1.18,
+            "max": 1.22
+          }
+        ],
+        "power": {
+          "kind": "whole_pack",
+          "watts": 375
+        }
+      },
+      {
+        "id": "hover",
+        "source": "planner/examples/six_phase.rs (synthetic)",
+        "phase": "hover",
+        "configuration": "synthetic-quad-A",
+        "workload": "camera logging",
+        "precipitation": "dry",
+        "ranges": [
+          {
+            "factor": "air_density_kg_m3",
+            "min": 1.18,
+            "max": 1.22
+          }
+        ],
+        "power": {
+          "kind": "split",
+          "propulsion": {
+            "kind": "pack_side",
+            "watts": 200
+          },
+          "compute": {
+            "kind": "downstream",
+            "watts": 9,
+            "efficiency": 0.9
+          },
+          "auxiliary": {
+            "kind": "pack_side",
+            "watts": 10
+          }
+        }
+      },
+      {
+        "id": "cruise",
+        "source": "planner/examples/six_phase.rs (synthetic)",
+        "phase": "cruise",
+        "configuration": "synthetic-quad-A",
+        "workload": "camera logging",
+        "precipitation": "dry",
+        "ranges": [
+          {
+            "factor": "air_density_kg_m3",
+            "min": 1.18,
+            "max": 1.22
+          }
+        ],
+        "power": {
+          "kind": "whole_pack",
+          "watts": 280
+        }
+      },
+      {
+        "id": "descent",
+        "source": "planner/examples/six_phase.rs (synthetic)",
+        "phase": "descent",
+        "configuration": "synthetic-quad-A",
+        "workload": "camera logging",
+        "precipitation": "dry",
+        "ranges": [
+          {
+            "factor": "air_density_kg_m3",
+            "min": 1.18,
+            "max": 1.22
+          }
+        ],
+        "power": {
+          "kind": "whole_pack",
+          "watts": 225
+        }
+      },
+      {
+        "id": "landing",
+        "source": "planner/examples/six_phase.rs (synthetic)",
+        "phase": "landing",
+        "configuration": "synthetic-quad-A",
+        "workload": "camera logging",
+        "precipitation": "dry",
+        "ranges": [
+          {
+            "factor": "air_density_kg_m3",
+            "min": 1.18,
+            "max": 1.22
+          }
+        ],
+        "power": {
+          "kind": "whole_pack",
+          "watts": 150
+        }
+      }
+    ]
+  }
+}
